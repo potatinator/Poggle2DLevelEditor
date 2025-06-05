@@ -7,9 +7,11 @@ using namespace std;
 
 SaveMgr::SaveMgr() {}
 
-std::vector<Peg*> SaveMgr::load(string name){
+std::vector<Peg*> SaveMgr::load(string fileName, std::vector<Peg*> in){
+    string name = "./saves/"+fileName;
     if(!filesystem::exists(name)){
         cout << "couldnt find file";
+        return in;
     }
     ifstream f(name);
 
@@ -38,10 +40,10 @@ std::vector<Peg*> SaveMgr::load(string name){
     return genPegs;
 }
 void SaveMgr::save(std::vector<Peg*> pegs){
-    string file = "save0.sav";
+    string file = "./saves/save0.sav";
     for(int i=0; i<20&&filesystem::exists(file); i++){
-        cout << "file: " << file << " exists, editing..." << endl;
-        file = "save" + to_string(i) + ".sav";
+        cout << "file: " << file << " already exists, skipping..." << endl;
+        file = "./saves/save" + to_string(i) + ".sav";
     }
     cout << "saving to: " << file << endl;
     save(file, pegs);

@@ -8,8 +8,8 @@ using namespace std;
 class SaveMgr{
     public:
         SaveMgr();
-        void save(string file, std::vector<Peg*> pegs);
+        void save(string file, std::vector<Peg*> pegs = std::vector<Peg*>());
         void save(std::vector<Peg*> pegs);
-        std::vector<Peg*> load(string file);
+        std::vector<Peg*> load(string file, std::vector<Peg*> in);
 };
 #endif

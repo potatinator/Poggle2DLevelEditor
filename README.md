@@ -3,8 +3,8 @@
 esc: quit
 left click: place peg at cursor
 right click: remove peg at cursor
-q: save level
-e: load level from file(will prompt for filename in console)
+q: save level(saves to save folder)
+e: load level from file(will prompt for filename in console, excluding ./save/)
 shift+c: clear level
 ## build and run
 to build and run the program, run<br/>

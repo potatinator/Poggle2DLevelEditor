@@ -94,8 +94,7 @@ void Game2D::processInputs(){
         string s;
         cout << "enter save file to load: " << endl;
         cin >> s;
-        std::vector<Peg*> tmp = save.load(s);
-        pegs = tmp;
+        pegs = save.load(s, pegs);
     }
 
     rightLast = rightMouse;

@@ -5,19 +5,19 @@
 #include <vector>
 #include "gameobject.h"
 #include "ui.h"
-#include "gun.h"
 #include "peg.h"
-
+#include "save.h"
 
 class Game2D{
     public:
         bool keys[1024];
+        bool oldKeys[1024];
         bool leftMouse;
         bool rightMouse;
         glm::vec2 mousePos;
-        ColoredButton* button;
-        Gun* gun;
-        bool lastpressed;
+        bool rightLast;
+        bool leftLast;
+        SaveMgr save;
         unsigned int width, height;
         bool wireframe;
         bool debug;

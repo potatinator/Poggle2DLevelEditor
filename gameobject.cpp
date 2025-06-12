@@ -4,6 +4,7 @@
 GameObject::GameObject(){}
 GameObject::GameObject(glm::vec2 pos, glm::vec2 scale, int layer, float angle, std::shared_ptr<Shader> shader)
     : position(pos), scale(scale), angle(angle), shader(shader), layer(layer) {
+    
     glGenVertexArrays(1, &VAO);
     glGenBuffers(1, &VBO);
     glBindVertexArray(VAO);
@@ -12,7 +13,7 @@ GameObject::GameObject(glm::vec2 pos, glm::vec2 scale, int layer, float angle, s
     glEnableVertexAttribArray(0);
     glVertexAttribPointer(0, 2, GL_FLOAT, GL_FALSE, 4 * sizeof(float), (void*)0);
     glEnableVertexAttribArray(1);
-    glVertexAttribPointer(1, 2, GL_FLOAT, GL_FALSE, 4 * sizeof(float), (void*)(2 * sizeof(float)));   
+    glVertexAttribPointer(1, 2, GL_FLOAT, GL_FALSE, 4 * sizeof(float), (void*)(2 * sizeof(float)));
 }
 void GameObject::update(float dt){
     transform = glm::mat4(1.0);

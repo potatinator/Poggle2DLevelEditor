@@ -1,11 +1,11 @@
 # Poggle level generator
 ## keys
-esc: quit
-left click: place peg at cursor
-right click: remove peg at cursor
-q: save level(saves to save folder)
-e: load level from file(will prompt for filename in console, excluding ./save/)
-shift+c: clear level
+esc: quit<br/>
+left click: place peg at cursor<br/>
+right click: remove peg at cursor<br/>
+q: save level(saves to save folder)<br/>
+e: load level from file(will prompt for filename in console, excluding ./save/)<br/>
+shift+c: clear level<br/>
 ## build and run
 to build and run the program, run<br/>
 ```g++ main.cpp shader.cpp gameobject.cpp texture.cpp game.cpp ui.cpp peg.cpp save.cpp glad.c -o build/src/poggle2d -I./include -lglfw -lGL -lglm -lassimp && ./build/src/poggle2d  ```<br/>

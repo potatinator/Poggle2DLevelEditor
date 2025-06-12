@@ -68,7 +68,7 @@ void Game2D::processInputs(){
 
     if(leftMouse && !leftLast){
         pegs.push_back(new Peg(
-            mousePos
+            mousePos-glm::vec2(10, 10)
         ));
     }
     if(rightMouse && !rightLast){
